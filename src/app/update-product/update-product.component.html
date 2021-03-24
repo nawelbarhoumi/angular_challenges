@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="offset-3 col-6">
+      <form [formGroup]="updateProductForm" (ngSubmit)="saveProduct()">
+        <div class="form-group">
+          <label for="name">Product Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Type the product name here" formControlName="productName"
+           [ngClass]="{'is-invalid': submitted && updateProductForm.controls.productName.errors, 'is-valid': submitted && !updateProductForm.controls.productName.errors}">
+        <div class="invalid-feedback d-block">
+          <div *ngIf="submitted && updateProductForm.controls.productName.hasError('required')">Product name is required.</div>
+        </div>
+        </div>
+        <div class="form-group">
+          <label for="description">Product Description</label>
+          <textarea class="form-control" row="10" id="description" placeholder="Type the product description here" formControlName="productDescription" 
+          [ngClass]="{'is-invalid': submitted && updateProductForm.controls.productDescription.errors, 'is-valid': submitted && !updateProductForm.controls.productDescription.errors}"></textarea>
+        <div class="invalid-feedback d-block">
+          <div *ngIf="submitted && updateProductForm.controls.productDescription.hasError('required')">Product description is required.</div>
+          <div *ngIf="submitted && updateProductForm.controls.productDescription.hasError('minlength')">product description is invalid format > 8.</div>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="text" class="form-control" id="quantity" placeholder="Type the product quantity here" formControlName="quantity"
+           [ngClass]="{'is-invalid': submitted && updateProductForm.controls.quantity.errors, 'is-valid': submitted && !updateProductForm.controls.quantity.errors}">
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Update</button>
+      </form>
+    </div>
+  </div>
