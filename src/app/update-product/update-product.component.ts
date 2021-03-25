@@ -54,5 +54,5 @@ export class UpdateProductComponent implements OnInit {
    
      this.router.navigate(['/list-product'])
 
-}
+  }
 }

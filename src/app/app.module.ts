@@ -11,6 +11,8 @@ import { FooterComponent } from './footer/footer.component';
 import { Page404Component } from './page404/page404.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddListComponent } from './add-list/add-list.component';
+import { ListComponent } from './list/list.component';
 // import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
@@ -21,7 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UpdateProductComponent,
     NavbarComponent,
     FooterComponent,
-    Page404Component
+    Page404Component,
+    AddListComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

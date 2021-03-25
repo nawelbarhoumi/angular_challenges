@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddListComponent } from './add-list/add-list.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ListProductComponent } from './list-product/list-product.component';
 import { Page404Component } from './page404/page404.component';
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'update-product/:i',
     component: UpdateProductComponent
+  },
+  {
+    path: 'add-list',
+    component: AddListComponent
   },
   {
     path: '**',
