@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductsService } from '../services/products.service';
+// import { matchNameDescriptionValidator } from '../validators/user-name.validator';
+// import { forbiddenProductNameValidator } from '../validators/user-name.validator';
 
 @Component({
   selector: 'app-add-product',
@@ -12,10 +14,10 @@ export class AddProductComponent implements OnInit {
 
   submitted = false;
   addProductForm: FormGroup = new FormGroup({
-    productName: new FormControl('', [Validators.required]),
+    productName: new FormControl('', [Validators.required, /*forbiddenProductNameValidator(/coka/)*/]),
     productDescription: new FormControl('', [Validators.required, Validators.minLength(8)]),
     quantity: new FormControl('', [Validators.required]),
-  })
+  }, {validators: [/*matchNameDescriptionValidator*/]})
   constructor( private productsService: ProductsService, private router: Router) { }
 
   ngOnInit(): void {

@@ -9,10 +9,11 @@ import { UpdateProductComponent } from './update-product/update-product.componen
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { Page404Component } from './page404/page404.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddListComponent } from './add-list/add-list.component';
 import { ListComponent } from './list/list.component';
+import { SharedModule } from './shared/shared.module';
+import { SkillsComponent } from './skills/skills.component';
 // import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
@@ -25,13 +26,13 @@ import { ListComponent } from './list/list.component';
     FooterComponent,
     Page404Component,
     AddListComponent,
-    ListComponent
+    ListComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    FormsModule,
+    SharedModule,
     BrowserAnimationsModule,
     // MatInputModule
   ],
