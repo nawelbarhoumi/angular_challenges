@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="offset-3 col-6">
+        <form [formGroup]="addPostForm" (ngSubmit)="savePost()">
+            <div class="form-group">
+                <label for="titre">Titre :</label>
+                <input type="text" class="form-control" id="titre" placeholder="Type your post here" formControlName="titre"
+                 [ngClass]="{'is-invalid': submitted && addPostForm.controls.titre.errors, 'is-valid': submitted && !addPostForm.controls.titre.errors}">
+                 <div class="invalid-feedback d-block">
+                    <div *ngIf="submitted && addPostForm.controls.titre.hasError('required')">Title is required.</div>
+                </div>
+            </div> 
+            <div class="form-group">
+                <label for="description">Description :</label>
+                <textarea class="form-control" row="10" id="description" placeholder="Type your description here" formControlName="description" 
+                [ngClass]="{'is-invalid': submitted && addPostForm.controls.description.errors, 'is-valid': submitted && !addPostForm.controls.description.errors}"></textarea>
+                <div class="invalid-feedback d-block">
+                    <div *ngIf="submitted && addPostForm.controls.description.hasError('required')">Description is required.</div>
+                    <div *ngIf="submitted && addPostForm.controls.description.hasError('minlength')">Description is invalid format > 8.</div>
+                </div>
+            </div> 
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Categorie :</label>
+                <select class="form-control" id="exampleFormControlSelect1" formControlName='categorie'>
+                    <option>Sport</option>
+                    <option>Technoliges</option>
+                    <option>Economie</option>
+                    <option>Société</option>
+                    <option>Culture</option>
+                  </select>
+                 <div class="invalid-feedback d-block"></div>
+            </div> 
+            <div class="form-group">
+                <label for="exampleFormControlInput">Date:</label>
+                <input type="date" class="form-control" id="exampleFormControlInput" placeholder="Give date to the Post" formControlName='date'>
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Save Post</button>
+        </form>
+    </div>
+</div>

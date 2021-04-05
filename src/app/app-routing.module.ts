@@ -1,34 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddListComponent } from './add-list/add-list.component';
-import { AddProductComponent } from './add-product/add-product.component';
-import { ListProductComponent } from './list-product/list-product.component';
+import { AddPostComponent } from './add-post/add-post.component';
+import { ListPostComponent } from './list-post/list-post.component';
 import { Page404Component } from './page404/page404.component';
-import { UpdateProductComponent } from './update-product/update-product.component';
+import { UpdatePostComponent } from './update-post/update-post.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/add-product',
+    redirectTo: '/add-post',
     pathMatch: 'full'
   },
   {
-    path: 'add-product',
-    component: AddProductComponent
+    path: 'add-post',
+    component: AddPostComponent
   },
   {
-    path: 'list-product',
-    component: ListProductComponent
+    path: 'list-post',
+    component: ListPostComponent
   },
   {
-    path: 'update-product/:i',
-    component: UpdateProductComponent
+    path: 'update-post/:i',
+    component: UpdatePostComponent
   },
-  {
-    path: 'add-list',
-    component: AddListComponent
-  },
-  { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
+  { path: 'nom', loadChildren: () => import('./nom/nom.module').then(m => m.NomModule) },
   {
     path: '**',
     component: Page404Component
