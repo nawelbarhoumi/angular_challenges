@@ -40,7 +40,6 @@ export class AddPostComponent implements OnInit {
 
     this.addPostForm.reset();
     this.submitted = false;
-
     this.router.navigate(['/list-post'])
 
   }
